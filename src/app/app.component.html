@@ -1,9 +1,11 @@
 <app-header />
 <main>
     <ul id="users">
-        <li>
-            <app-user />
-        </li>
+        @for (user of users; track user.id) {
+            <li>
+                <app-user [avatar]="user.avatar" [name]="user.name" (userClick)="onUserClick()" />
+            </li>
+        }
     </ul>
 </main>
 <router-outlet />
