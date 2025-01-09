@@ -1,5 +1,10 @@
 import { Component, computed, EventEmitter, Input, Output, input } from '@angular/core';
-import { DUMMY_USERS } from '../../dummy.users';
+
+interface IUser {
+  id: string;
+  avatar: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-user',
@@ -8,13 +13,11 @@ import { DUMMY_USERS } from '../../dummy.users';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  @Input({ required: true }) id!: string;
-  @Input({ required: true }) avatar!: string;
-  @Input() name!: string;
+  @Input({ required: true }) user!: IUser;
   @Output() userClick = new EventEmitter<string>();
 
   get imagePath() {
-    return `users/${this.avatar}`;
+    return `users/${this.user.avatar}`;
   }
 
   // usando signals
@@ -23,6 +26,6 @@ export class UserComponent {
   imagePathSignal = computed(() => `users/${this.avatarSignal()}`);
 
   onUserClick() {
-    this.userClick.emit(this.id);
+    this.userClick.emit(this.user.id);
   }
 }

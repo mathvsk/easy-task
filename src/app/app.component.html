@@ -4,9 +4,7 @@
         @for (user of users; track user.id) {
             <li>
                 <app-user
-                    [id]="user.id" 
-                    [avatar]="user.avatar" 
-                    [name]="user.name" 
+                    [user]="user"
                     (userClick)="onUserClick($event)" 
                 />
             </li>
