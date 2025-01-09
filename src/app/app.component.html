@@ -12,7 +12,9 @@
     </ul>
 
     @if (selectedUserId) {
-        <app-tasks [name]="taskUserName" />
+        <app-tasks [name]="selectedUserName" />
+    } @else {
+        <p id="fallback">Select a user to see their tasks</p>
     }
 </main>
 <router-outlet />

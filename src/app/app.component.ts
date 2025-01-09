@@ -15,7 +15,7 @@ export class AppComponent {
   public users = DUMMY_USERS;
   public selectedUserId!: string;
 
-  get taskUserName() {
+  get selectedUserName() {
     return this.users.find(user => user.id === this.selectedUserId)?.name || '';
   }
 
