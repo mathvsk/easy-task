@@ -9,6 +9,7 @@ import { IUser } from './user-module';
 })
 export class UserComponent {
   @Input({ required: true }) user!: IUser;
+  @Input({ required: true }) selected!: boolean;
   @Output() userClick = new EventEmitter<string>();
 
   get imagePath() {
