@@ -11,8 +11,13 @@ import { DUMMY_TASKS } from '../../dummy.tasks';
 export class TasksComponent {
   @Input({ required: true }) name!: string;
   @Input({ required: true }) userId!: string;
+  private tasks = DUMMY_TASKS;
 
   get userTasks() {
-    return DUMMY_TASKS.filter(task => task.userId === this.userId);
+    return this.tasks.filter(task => task.userId === this.userId);
+  }
+
+  onCompleteTask(taskId: string) {
+    this.tasks = this.tasks.filter(task => task.id !== taskId);
   }
 }
