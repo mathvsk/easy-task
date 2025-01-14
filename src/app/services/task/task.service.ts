@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ITask } from '../../dummy.tasks';
 import { INewTask } from '../../components/new-task/new-task.component';
 import { STORAGE_KEY } from '../../local-storage';
+import { ITask } from '../../components/task/task-module';
 
 @Injectable({
   providedIn: 'root'

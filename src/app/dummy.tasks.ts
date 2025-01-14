@@ -1,10 +1,4 @@
-export interface ITask {
-    id: string;
-    userId: string;
-    title: string;
-    summary: string;
-    dueDate: string;
-  }
+import { ITask } from "./components/task/task-module";
 
 export const DUMMY_TASKS: ITask[] = [
     {
